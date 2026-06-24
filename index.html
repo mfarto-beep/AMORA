@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMORA | Catálogo Virtual</title>
+    <meta
+      name="description"
+      content="Catálogo virtual interactivo de AMORA para skincare coreano y productos de belleza online."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-shell">
+        <a class="brand" href="#inicio" aria-label="AMORA inicio">
+          <span class="brand-mark">A</span>
+          <span>
+            <strong>AMORA</strong>
+            <small>Catálogo virtual</small>
+          </span>
+        </a>
+
+        <label class="search-box" for="searchInput">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="searchInput"
+            type="search"
+            autocomplete="off"
+            placeholder="Buscar producto, marca o necesidad"
+          />
+        </label>
+      </div>
+
+      <nav class="category-nav" aria-label="Categorías del catálogo">
+        <button class="filter-btn active" type="button" data-category="Todos">Todos</button>
+        <button class="filter-btn" type="button" data-category="Limpiadores">Limpiadores</button>
+        <button class="filter-btn" type="button" data-category="Tónicos">Tónicos</button>
+        <button class="filter-btn" type="button" data-category="Sueros">Sueros</button>
+        <button class="filter-btn" type="button" data-category="Cremas">Cremas</button>
+        <button class="filter-btn" type="button" data-category="Protectores Solares">
+          Protectores Solares
+        </button>
+        <button class="filter-btn" type="button" data-category="Cuidado Especializado">
+          Cuidado Especializado
+        </button>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Skincare coreano seleccionado</p>
+          <h1>AMORA</h1>
+          <p>
+            Rutinas de belleza con limpiadores, tónicos, sueros, cremas y protección solar
+            para una piel más luminosa, hidratada y cuidada.
+          </p>
+          <a class="hero-action" href="#catalogo">Ver catálogo</a>
+        </div>
+        <div class="hero-image" aria-label="Portada del catálogo AMORA">
+          <img src="assets/products/pagina_1.jpg" alt="Portada del catálogo AMORA" />
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalogo" aria-labelledby="catalogTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Catálogo interactivo</p>
+            <h2 id="catalogTitle">Belleza coreana</h2>
+          </div>
+          <p id="resultCount" class="result-count" aria-live="polite"></p>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+        <p class="empty-state" id="emptyState" hidden>
+          No encontramos productos con ese criterio. Prueba con otra búsqueda o categoría.
+        </p>
+      </section>
+
+      <section class="payment-section" id="pagos" aria-labelledby="paymentTitle">
+        <div class="payment-copy">
+          <p class="eyebrow">Pago y contacto</p>
+          <h2 id="paymentTitle">Compra con confianza</h2>
+          <p>
+            Confirma tu producto por WhatsApp y realiza el pago con los datos de recaudo de
+            AMORA.
+          </p>
+          <div class="payment-grid">
+            <div><span>Banco</span><strong>Banco Pichincha</strong></div>
+            <div><span>Cuenta Soles</span><strong>001536482064</strong></div>
+            <div><span>CCI</span><strong>03500000153648206495</strong></div>
+            <div><span>Titular</span><strong>GABRIELA FARTO SILVA</strong></div>
+            <div><span>RUC</span><strong>10102840751</strong></div>
+            <div><span>Celular</span><strong>998 266 052</strong></div>
+          </div>
+        </div>
+
+        <aside class="plin-card" aria-label="Código QR PLIN">
+          <span>PLIN</span>
+          <div class="qr-placeholder">
+            <span>QR</span>
+          </div>
+          <p>Espacio reservado para el código QR de PLIN.</p>
+        </aside>
+      </section>
+    </main>
+
+    <a
+      class="floating-whatsapp"
+      href="https://wa.me/51998266052"
+      target="_blank"
+      rel="noopener"
+      aria-label="Contactar a AMORA por WhatsApp"
+    >
+      WhatsApp
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
