@@ -258,6 +258,10 @@ const searchInput = document.querySelector("#searchInput");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const resultCount = document.querySelector("#resultCount");
 const emptyState = document.querySelector("#emptyState");
+const openTermsButton = document.querySelector("#openTerms");
+const closeTermsButton = document.querySelector("#closeTerms");
+const termsModal = document.querySelector("#termsModal");
+const termsDialog = document.querySelector(".terms-modal");
 let activeCategory = "Todos";
 
 const normalize = (value) =>
@@ -351,5 +355,34 @@ filterButtons.forEach((button) => {
 });
 
 searchInput.addEventListener("input", filterProducts);
+
+function openTermsModal() {
+  termsModal.classList.add("is-open");
+  termsModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  termsDialog.focus();
+}
+
+function closeTermsModal() {
+  termsModal.classList.remove("is-open");
+  termsModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+  openTermsButton.focus();
+}
+
+openTermsButton.addEventListener("click", openTermsModal);
+closeTermsButton.addEventListener("click", closeTermsModal);
+
+termsModal.addEventListener("click", (event) => {
+  if (event.target === termsModal) {
+    closeTermsModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && termsModal.classList.contains("is-open")) {
+    closeTermsModal();
+  }
+});
 
 renderProducts(products);
