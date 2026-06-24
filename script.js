@@ -262,6 +262,9 @@ const openTermsButton = document.querySelector("#openTerms");
 const closeTermsButton = document.querySelector("#closeTerms");
 const termsModal = document.querySelector("#termsModal");
 const termsDialog = document.querySelector(".terms-modal");
+const copyButtons = document.querySelectorAll(".copy-btn");
+const copyToast = document.querySelector("#copyToast");
+let copyToastTimer;
 let activeCategory = "Todos";
 
 const normalize = (value) =>
@@ -383,6 +386,38 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && termsModal.classList.contains("is-open")) {
     closeTermsModal();
   }
+});
+
+function showCopyToast() {
+  copyToast.classList.add("is-visible");
+  window.clearTimeout(copyToastTimer);
+  copyToastTimer = window.setTimeout(() => {
+    copyToast.classList.remove("is-visible");
+  }, 1600);
+}
+
+async function copyPaymentValue(value) {
+  try {
+    await navigator.clipboard.writeText(value);
+  } catch (error) {
+    const temporaryInput = document.createElement("input");
+    temporaryInput.value = value;
+    temporaryInput.setAttribute("readonly", "");
+    temporaryInput.style.position = "fixed";
+    temporaryInput.style.opacity = "0";
+    document.body.appendChild(temporaryInput);
+    temporaryInput.select();
+    document.execCommand("copy");
+    temporaryInput.remove();
+  }
+
+  showCopyToast();
+}
+
+copyButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    copyPaymentValue(button.dataset.copy);
+  });
 });
 
 renderProducts(products);

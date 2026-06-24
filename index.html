@@ -135,13 +135,25 @@
             Confirma tu producto por WhatsApp y realiza el pago con los datos de recaudo de
             AMORA.
           </p>
-          <div class="payment-grid">
-            <div><span>Banco</span><strong>Banco Pichincha</strong></div>
-            <div><span>Cuenta Soles</span><strong>001536482064</strong></div>
-            <div><span>CCI</span><strong>03500000153648206495</strong></div>
-            <div><span>Titular</span><strong>GABRIELA FARTO SILVA</strong></div>
-            <div><span>RUC</span><strong>10102840751</strong></div>
-            <div><span>Celular</span><strong>998 266 052</strong></div>
+          <div class="payment-card" aria-label="Datos de transferencia Banco Pichincha">
+            <div class="payment-row">
+              <span>Banco</span>
+              <strong>Banco Pichincha</strong>
+            </div>
+            <div class="payment-row">
+              <span>Cuenta Soles</span>
+              <strong>001536482064</strong>
+              <button class="copy-btn" type="button" data-copy="001536482064">Copiar</button>
+            </div>
+            <div class="payment-row">
+              <span>CCI</span>
+              <strong>03500000153648206495</strong>
+              <button class="copy-btn" type="button" data-copy="03500000153648206495">Copiar</button>
+            </div>
+            <div class="payment-row">
+              <span>Titular</span>
+              <strong>GABRIELA FARTO SILVA</strong>
+            </div>
           </div>
         </div>
 
@@ -155,8 +167,11 @@
 
     <footer class="site-footer">
       <p>AMORA · Venta online de skincare coreano</p>
+      <p class="footer-ruc">RUC 10102840751</p>
       <button class="legal-link" type="button" id="openTerms">Términos y Condiciones</button>
     </footer>
+
+    <div class="copy-toast" id="copyToast" role="status" aria-live="polite">¡Copiado!</div>
 
     <div class="modal-overlay" id="termsModal" aria-hidden="true">
       <section
