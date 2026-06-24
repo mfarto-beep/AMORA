@@ -540,6 +540,19 @@ h3 {
   text-align: center;
 }
 
+.plin-container {
+  display: grid;
+  justify-items: center;
+}
+
+.plin-logo {
+  width: min(96px, 42vw);
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
 .plin-qr {
   width: min(200px, 74vw);
   aspect-ratio: 1;
