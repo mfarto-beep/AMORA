@@ -499,8 +499,7 @@ h3 {
   border-bottom: 0;
 }
 
-.payment-row span,
-.plin-card > span {
+.payment-row span {
   display: block;
   color: var(--muted);
   font-size: 0.74rem;
@@ -534,22 +533,27 @@ h3 {
 
 .plin-card {
   display: grid;
+  gap: 12px;
   align-content: center;
   justify-items: center;
-  padding: 1.2rem;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto;
+  padding: 1.35rem;
   text-align: center;
 }
 
 .plin-container {
   display: grid;
+  gap: 12px;
   justify-items: center;
+  width: 100%;
 }
 
 .plin-logo {
   width: min(96px, 42vw);
   max-width: 100%;
   height: auto;
-  margin-bottom: 10px;
   object-fit: contain;
 }
 
