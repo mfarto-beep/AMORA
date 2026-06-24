@@ -458,23 +458,14 @@ h3 {
   text-align: center;
 }
 
-.qr-placeholder {
-  display: grid;
-  width: min(13rem, 74vw);
+.plin-qr {
+  width: min(200px, 74vw);
   aspect-ratio: 1;
-  place-items: center;
-  border: 1px dashed rgba(36, 28, 31, 0.26);
+  object-fit: cover;
+  border: 1px solid rgba(189, 63, 105, 0.16);
   border-radius: 8px;
-  background:
-    linear-gradient(90deg, rgba(36, 28, 31, 0.08) 1px, transparent 1px) 0 0 / 1.2rem 1.2rem,
-    linear-gradient(rgba(36, 28, 31, 0.08) 1px, transparent 1px) 0 0 / 1.2rem 1.2rem,
-    #fff;
-}
-
-.qr-placeholder span {
-  color: var(--rose-dark);
-  font-size: 2rem;
-  font-weight: 900;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(69, 45, 55, 0.12);
 }
 
 .plin-card p {
